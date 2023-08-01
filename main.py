@@ -21,7 +21,7 @@ def sendEmail(sender_email, sender_password, receiver_email, quote_api_key):
     if response.status_code == requests.codes.ok:
         quoteInfo = response.json()[0]
         contents.append("<br/><h4>Quote of the day is:</h4>")
-        contents.append("<p><i>{}</i></p><span>{}</span>".format(quoteInfo['quote'], quoteInfo['author']))
+        contents.append('<p><i>"{}"</i> <span>- {}</span></p>'.format(quoteInfo['quote'], quoteInfo['author']))
     else:
         print(r)
 
