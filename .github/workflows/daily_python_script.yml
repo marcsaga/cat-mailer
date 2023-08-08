@@ -20,6 +20,14 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Dump env variables
+        env:
+          ENV_CONTEXT: ${{ toJson(env) }}
+          VARS_CONTEXT: ${{ toJson(vars) }}
+        run: |
+          echo "$ENV_CONTEXT"
+          echo "$VARS_CONTEXT"
+
       - name: Run Python script
         env:
           SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
