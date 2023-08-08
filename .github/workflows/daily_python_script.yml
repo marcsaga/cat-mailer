@@ -25,6 +25,6 @@ jobs:
           SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
           SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
           QUOTE_API_KEY: ${{ secrets.QUOTE_API_KEY }}
-          RECEIVER_EMAIL: ${{ env.RECEIVER_EMAIL }}
-          EMAIL_SUBJECT: ${{ env.EMAIL_SUBJECT }}
+          RECEIVER_EMAIL: ${{ vars.RECEIVER_EMAIL }}
+          EMAIL_SUBJECT: ${{ vars.EMAIL_SUBJECT }}
         run: python main.py
