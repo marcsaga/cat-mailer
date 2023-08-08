@@ -1,8 +1,6 @@
 name: Daily Python Script
 
-on:
-  schedule:
-    - cron: "55 7 * * *"
+on: push
 
 jobs:
   run_python_script:
