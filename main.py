@@ -43,6 +43,7 @@ def send_email(sender_email, sender_password, receiver_email, subject, author, q
         to=receiver_email,
         subject=subject,
         contents=contents,
+        attachments=CAT_GIF_FILE
     )
 
 
@@ -55,6 +56,7 @@ def main():
     email_subject = os.environ.get("EMAIL_SUBJECT")
 
     try:
+        get_cat_gif()
         quote, author = get_quote_of_the_day(quote_api_key)
         send_email(sender_email=sender_email, sender_password=sender_password,
                    receiver_email=receiver_email, author=author, quote=quote, subject=email_subject)
